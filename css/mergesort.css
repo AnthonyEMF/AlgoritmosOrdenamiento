@@ -1,0 +1,40 @@
+/* Container de la demostracion */
+.demostracion{
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor donde se genera el grafico de barras */
+#visualizacion{
+    display: flex;
+    align-items: flex-end;
+    height: 250px;
+    width: 60%;
+    background-color: #ccc;
+    border: 5px solid #ccc;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Botones */
+button{
+    width: 20%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    background-color: blueviolet;
+    color: white;
+    cursor: pointer;
+}
+
+/* Estilo para botones inactivos */
+.btn-disabled{
+    background-color: rgb(93, 30, 153);
+    cursor: default;
+}

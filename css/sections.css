@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: blueviolet;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal */
+.container{
+    width: 70%;
+    height: 500px;
+    padding: 20px 40px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Encabezado */
+.header{
+    display: flex;
+}
+
+/* Container titulo */
+.container-titulo{
+    width: 80%;
+    display: flex;
+}
+
+/* Container boton regresar */
+.container-btnBack{
+    width: 20%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+/* Icono boton regresar */
+img{
+    height: 25px;
+}
+
+/* Boton regresar */
+a{
+    width: 50px;
+    height: 25px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+a:hover{
+    background-color: rgb(93, 30, 153);
+}
+
+/* Descripcion */
+p{
+    margin: 0;
+    text-align: left;
+}
