@@ -17,8 +17,8 @@
     outline: none;
 }
 
-#btn-agregar{
-    width: 20%;
+#btn-agregar, #btn-aleatorio{
+    width: 9.8%;
 }
 
 /* Contenedor donde se genera el grafico de barras */

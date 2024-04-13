@@ -2,6 +2,7 @@
 const visualizacion = document.querySelector('#visualizacion');
 const inputDatos = document.querySelector('#input-datos');
 const btnAgregar = document.querySelector('#btn-agregar');
+const btnRandom = document.querySelector('#btn-aleatorio');
 const btnOrdenar = document.querySelector('#btn-ordenar');
 const btnLimpiar = document.querySelector('#btn-detener');
 // Variables de control
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     function cargarEventos(){
         btnAgregar.addEventListener('click', agregarDato);
+        btnRandom.addEventListener('click', graficoAleatorio);
         btnOrdenar.addEventListener('click', ordenarGrafico);
         btnLimpiar.addEventListener('click', detenerOrdenamiento);
         // Agregar dato cuando se presione la tecla "Enter"
@@ -24,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
-    /* ----- Funciones Principales ----- */
+    /* ----- Funciones para los botones ----- */
 
     // Funcion para agregar datos al arreglo
     function agregarDato(){
@@ -34,56 +36,112 @@ document.addEventListener('DOMContentLoaded', function(){
             inputDatos.value = '';
             return;
         }
-
+        
+        desactivarBoton('aleatorio');
         array.push(datos);
         inputDatos.value = '';
         imprimirArreglo(array);
         nDatos++;
 
         if(nDatos === 10){
-            inputDatos.disabled = true;
-            btnAgregar.disabled = true;
-            inputDatos.classList.add('input-disabled');
-            btnAgregar.classList.add('btn-disabled');
-            inputDatos.placeholder = '...';
+            desactivarBoton('agregar');
         }else if(nDatos > 2){
             detener = false;
-            btnOrdenar.disabled = false;
-            btnLimpiar.disabled = false;
-            btnOrdenar.classList.remove('btn-disabled');
-            btnLimpiar.classList.remove('btn-disabled');
+            activarBoton('ordenar');
+            activarBoton('limpiar');
         }
+    }
+
+    // Funcion para generar un grafico a partir de una matriz de numeros aleatorios
+    function graficoAleatorio(){
+        desactivarBoton('agregar');
+        activarBoton('ordenar');
+        activarBoton('limpiar');
+
+        for(let i=0; i<10; i++){
+            array.push(Math.floor(Math.random() * (19+1) + 1));
+        }
+
+        imprimirArreglo(array);
+        desactivarBoton('aleatorio');
+        detener = false;
     }
 
     // Funcion para ordenar el grafico
     function ordenarGrafico(){
         algoritmoBurbuja(array);
-        btnOrdenar.disabled = true;
-        btnOrdenar.classList.add('btn-disabled');
-
-        inputDatos.disabled = true;
-        btnAgregar.disabled = true;
-        inputDatos.classList.add('input-disabled');
-        btnAgregar.classList.add('btn-disabled');
-        inputDatos.placeholder = '...';
+        desactivarBoton('agregar');
+        desactivarBoton('ordenar');
     }
 
-    // Funcion para detener el ordenamiento
+    // Funcion para detener el ordenamiento y limpiar la pantalla
     function detenerOrdenamiento(){
         detener = true;
         limpiarVisualizacion();
-        btnLimpiar.disabled = true;
-        btnOrdenar.disabled = true;
-        btnLimpiar.classList.add('btn-disabled');
-        btnOrdenar.classList.add('btn-disabled');
 
-        inputDatos.disabled = false;
-        btnAgregar.disabled = false;
-        inputDatos.classList.remove('input-disabled');
-        btnAgregar.classList.remove('btn-disabled');
-        inputDatos.placeholder = 'Ingresar numeros a ordenar (1-20)...';
+        desactivarBoton('ordenar');
+        desactivarBoton('limpiar');
+        activarBoton('agregar');
+        activarBoton('aleatorio');
         array = [];
         nDatos = 0;
+    }
+
+    /* ----- Funciones para optimizar el codigo ----- */
+
+    // Funcion para activar los botones agregar, aleatoio, ordenar y limpiar
+    function activarBoton(op){
+        switch(op){
+            case 'agregar':
+                inputDatos.disabled = false;
+                btnAgregar.disabled = false;
+                inputDatos.classList.remove('input-disabled');
+                btnAgregar.classList.remove('btn-disabled');
+                inputDatos.placeholder = 'Ingresar numeros a ordenar (1-20)...';
+                break;
+            case 'aleatorio':
+                btnRandom.disabled = false;
+                btnRandom.classList.remove('btn-disabled');
+                break;
+            case 'ordenar':
+                btnOrdenar.disabled = false;
+                btnOrdenar.classList.remove('btn-disabled');
+                break;
+            case 'limpiar':
+                btnLimpiar.disabled = false;
+                btnLimpiar.classList.remove('btn-disabled');
+                break;
+            default:
+                break;
+        }
+    }
+
+    // Funcion para desactivar los botones agregar, aleatorio, ordenar y limpiar
+    function desactivarBoton(op){
+        switch(op){
+            case 'agregar':
+                inputDatos.disabled = true;
+                btnAgregar.disabled = true;
+                inputDatos.classList.add('input-disabled');
+                btnAgregar.classList.add('btn-disabled');
+                inputDatos.placeholder = '...';
+                break;
+            case 'aleatorio':
+                btnRandom.disabled = true;
+                btnRandom.classList.add('btn-disabled');
+                break;
+            case 'ordenar':
+                btnOrdenar.disabled = true;
+                btnOrdenar.classList.add('btn-disabled');
+                break;
+            case 'limpiar':
+                btnLimpiar.disabled = true;
+                btnLimpiar.classList.add('btn-disabled');
+                break;
+            default:
+                console.log('Error: Opcion no valida.');
+                break;
+        }
     }
 
     // Funcion para limpiar el HTML

@@ -17,8 +17,8 @@
     outline: none;
 }
 
-#btn-agregar{
-    width: 20%;
+#btn-agregar, #btn-aleatorio{
+    width: 9.8%;
 }
 
 /* Contenedor donde se genera el grafico de barras */
@@ -32,13 +32,14 @@
     border-bottom: 0;
     border-radius: 5px;
     margin: 5px 0;
-    padding: 0 2px;
+    padding: 0 4px;
+    padding-right: 3px;
 }
 
 /* Estilo para cada barra del grafico */
 .bar{
     background-color: dodgerblue;
-    width: 52px;
+    width: 51px;
     margin: 0 2px;
     transition: height 0.2s;
 }
