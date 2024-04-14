@@ -21,10 +21,10 @@
     width: 9.8%;
 }
 
-/* Contenedor donde se genera el grafico de barras */
+/* Contenedor de la demostracion */
 #visualizacion{
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
     height: 220px;
     width: 60%;
     background-color: #ccc;
@@ -33,6 +33,21 @@
     border-radius: 5px;
     margin: 5px 0;
     padding: 0 2px;
+}
+
+/* Contenedores de los recuadros */
+.container-actual, .container-recuadros{
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-actual{
+    padding-top: 30px;
+}
+.container-recuadros{
+    padding-bottom: 35px;
 }
 
 /* Botones */
@@ -53,4 +68,24 @@ button{
 .btn-disabled{
     background-color: rgb(78, 25, 128);
     cursor: default;
+}
+
+/* Estilo para los recuadros del grafico */
+.recuadro, .recuadro-actual{
+    width: 60px;
+    height: 60px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+/* Estilo del recuadro que va ser tomado */
+.recuadro-actual{
+    background-color: red;
 }

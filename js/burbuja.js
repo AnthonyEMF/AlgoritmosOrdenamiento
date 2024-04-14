@@ -10,7 +10,9 @@ let array = [];
 let nDatos = 0;
 let detener = false;
 
+// Cargar todo el DOM
 document.addEventListener('DOMContentLoaded', function(){
+
     cargarEventos();
 
     function cargarEventos(){
@@ -52,15 +54,13 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
 
-    // Funcion para generar un grafico a partir de una matriz de numeros aleatorios
+    // Funcion para generar un grafico a partir de una arreglo de numeros aleatorios
     function graficoAleatorio(){
         desactivarBoton('agregar');
         activarBoton('ordenar');
         activarBoton('limpiar');
 
-        for(let i=0; i<10; i++){
-            array.push(Math.floor(Math.random() * (19+1) + 1));
-        }
+        array = arregloAleatorio(10, 1, 20);
 
         imprimirArreglo(array);
         desactivarBoton('aleatorio');
@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     // Funcion para ordenar el grafico
+    btnOrdenar.disabled = true;
     function ordenarGrafico(){
         algoritmoBurbuja(array);
         desactivarBoton('agregar');
@@ -75,9 +76,10 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     // Funcion para detener el ordenamiento y limpiar la pantalla
+    btnLimpiar.disabled = true;
     function detenerOrdenamiento(){
         detener = true;
-        limpiarVisualizacion();
+        limpiarHTML();
 
         desactivarBoton('ordenar');
         desactivarBoton('limpiar');
@@ -87,79 +89,24 @@ document.addEventListener('DOMContentLoaded', function(){
         nDatos = 0;
     }
 
-    /* ----- Funciones para optimizar el codigo ----- */
-
-    // Funcion para activar los botones agregar, aleatoio, ordenar y limpiar
-    function activarBoton(op){
-        switch(op){
-            case 'agregar':
-                inputDatos.disabled = false;
-                btnAgregar.disabled = false;
-                inputDatos.classList.remove('input-disabled');
-                btnAgregar.classList.remove('btn-disabled');
-                inputDatos.placeholder = 'Ingresar numeros a ordenar (1-20)...';
-                break;
-            case 'aleatorio':
-                btnRandom.disabled = false;
-                btnRandom.classList.remove('btn-disabled');
-                break;
-            case 'ordenar':
-                btnOrdenar.disabled = false;
-                btnOrdenar.classList.remove('btn-disabled');
-                break;
-            case 'limpiar':
-                btnLimpiar.disabled = false;
-                btnLimpiar.classList.remove('btn-disabled');
-                break;
-            default:
-                break;
-        }
-    }
-
-    // Funcion para desactivar los botones agregar, aleatorio, ordenar y limpiar
-    function desactivarBoton(op){
-        switch(op){
-            case 'agregar':
-                inputDatos.disabled = true;
-                btnAgregar.disabled = true;
-                inputDatos.classList.add('input-disabled');
-                btnAgregar.classList.add('btn-disabled');
-                inputDatos.placeholder = '...';
-                break;
-            case 'aleatorio':
-                btnRandom.disabled = true;
-                btnRandom.classList.add('btn-disabled');
-                break;
-            case 'ordenar':
-                btnOrdenar.disabled = true;
-                btnOrdenar.classList.add('btn-disabled');
-                break;
-            case 'limpiar':
-                btnLimpiar.disabled = true;
-                btnLimpiar.classList.add('btn-disabled');
-                break;
-            default:
-                console.log('Error: Opcion no valida.');
-                break;
-        }
-    }
-
-    // Funcion para limpiar el HTML
-    function limpiarVisualizacion(){
-        while(visualizacion.firstChild){
-            visualizacion.removeChild(visualizacion.firstChild);
-        }
-    }
+    /* ----- Funciones Principales ----- */
 
     // Funcion para renderizar el arreglo en forma de barras
     function imprimirArreglo(arreglo){
-        limpiarVisualizacion();
+        limpiarHTML();
 
-        for(let i=0; i<arreglo.length; i++){
-            let bar = document.createElement('div');
-            bar.classList.add('bar');
-            bar.style.height = arreglo[i] * 10.5 + 'px';
-            visualizacion.appendChild(bar);
+        arreglo.forEach(barra => {
+            const divBarra = document.createElement('div');
+            divBarra.classList.add('bar');
+            divBarra.style.height = barra * 10.5 + 'px';
+            visualizacion.appendChild(divBarra);
+        });
+    }
+
+    // Funcion para limpiar el HTML
+    function limpiarHTML(){
+        while(visualizacion.firstChild){
+            visualizacion.removeChild(visualizacion.firstChild);
         }
     }
 
@@ -192,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function(){
             }
 
             if(detener){ // flag detener y limpiar el grafico
-                limpiarVisualizacion();
+                limpiarHTML();
                 break;
             }
         }

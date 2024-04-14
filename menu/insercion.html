@@ -21,20 +21,24 @@
         </div>
         <!-- Informacion -->
         <p>El algoritmo de inserción en programación es un método de ordenamiento que 
-        funciona dividiendo la lista original en dos partes: una parte ordenada y otra desordenada. 
-        Luego, recorre la lista desordenada, tomando cada elemento y colocándolo en su posición 
-        correcta en la parte ordenada, desplazando los elementos necesarios para hacer espacio.</p>
+        funciona tomando un elemento a la vez e insertándolo en la posición correcta en la parte ordenada 
+        de la lista, desplazando los elementos mayores hacia la derecha para hacer espacio. Este proceso 
+        se repite hasta que todos los elementos estén en su lugar.</p>
         <!-- Demostracion -->
         <input type="number" id="input-datos" placeholder="Ingresar datos a ordenar...">
         <button id="btn-agregar">Agregar</button>
         <button id="btn-aleatorio">Aleatorio</button>
         <div class="demostracion">
-            <div id="visualizacion"><!-- Generado mediante JavaScript --></div>
+            <div id="visualizacion">
+                <div class="container-actual"><!-- Generado mediante JavaScript --></div>
+                <div class="container-recuadros"><!-- Generado mediante JavaScript --></div>
+            </div>
         </div>
-        <button id="btn-ordenar">Ordenar</button>
-        <button id="btn-limpiar">Limpiar</button>
+        <button id="btn-ordenar" class="btn-disabled">Ordenar</button>
+        <button id="btn-limpiar" class="btn-disabled">Limpiar</button>
     </div>
     <!-- Enlace al archivo JavaScript -->
+    <script src="/js/main.js"></script>
     <script src="/js/insercion.js"></script>
 </body>
 </html>
