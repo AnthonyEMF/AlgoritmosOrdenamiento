@@ -20,21 +20,22 @@
             </div>
         </div>
         <!-- Informacion -->
-        <p>Es un algoritmo de ordenamiento eficiente que utiliza la técnica de "dividir y conquistar". 
-        Consiste en dividir repetidamente la lista original en mitades hasta que cada sublista tenga un 
+        <p>MergeSort o Mezcla es un algoritmo de ordenamiento eficiente que utiliza la técnica de "dividir y conquistar", 
+        consiste en dividir repetidamente la lista original en mitades hasta que cada sublista tenga un 
         solo elemento, luego fusiona esas sublistas de manera ordenada. La clave de MergeSort es la 
         operación de fusión, donde combina dos sublistas ordenadas en una única lista ordenada.</p>
         <!-- Demostracion -->
-        <input type="number" id="input-datos" placeholder="Ingresar datos a ordenar...">
+        <input type="number" id="input-datos" placeholder="Ingresar numeros a ordenar (1-20)...">
         <button id="btn-agregar">Agregar</button>
         <button id="btn-aleatorio">Aleatorio</button>
         <div class="demostracion">
             <div id="visualizacion"><!-- Generado mediante JavaScript --></div>
         </div>
-        <button id="btn-ordenar">Ordenar</button>
-        <button id="btn-limpiar">Limpiar</button>
+        <button id="btn-ordenar" class="btn-disabled" disabled>Ordenar</button>
+        <button id="btn-limpiar" class="btn-disabled" disabled>Limpiar</button>
     </div>
     <!-- Enlace al archivo JavaScript -->
+    <script src="/js/main.js"></script>
     <script src="/js/mergesort.js"></script>
 </body>
 </html>

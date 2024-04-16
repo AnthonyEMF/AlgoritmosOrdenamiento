@@ -1,12 +1,86 @@
+// Seleccionar elementos
+const visualizacion = document.querySelector('#visualizacion');
+const containerSuperior = document.querySelector('.container-superior');
+const containerInferior = document.querySelector('.container-inferior');
+const inputDatos = document.querySelector('#input-datos');
+const btnAgregar = document.querySelector('#btn-agregar');
+const btnRandom = document.querySelector('#btn-aleatorio');
+const btnOrdenar = document.querySelector('#btn-ordenar');
+const btnLimpiar = document.querySelector('#btn-limpiar');
+// Variables de control
+let arreglo = [];
+let actual = 0;
+let nDatos = 0;
+let detener = false;
+
 /* ----- Funciones Globales ----- */
 
-// Funcion para generar un arreglo de numeros aleatorios
-function arregloAleatorio(length, min, max){
-    let arreglo = [];
-    for(let i=0; i<length; i++){
-        arreglo.push(Math.floor(Math.random() * (max-min+1) + min));
+// Funcion para agregar datos al arreglo
+function agregarDato(length, amount){ // length: tamaño de datos, amount: cantidad de datos
+    let datos = parseFloat(inputDatos.value);
+    while(datos<=0 || datos>amount || inputDatos.value === ''){
+        alert(`Error: Ingresar numeros entre 1 y ${amount}.`);
+        inputDatos.value = '';
+        return;
     }
-    return arreglo;
+    
+    desactivarBoton('aleatorio');
+    arreglo.push(datos);
+    inputDatos.value = '';
+    imprimirArreglo(arreglo);
+    nDatos++;
+    detener = false;
+
+    if(nDatos === length){
+        desactivarBoton('agregar');
+    }else if(nDatos > 2){
+        activarBoton('ordenar');
+        activarBoton('limpiar');
+    }
+}
+
+// Funcion para generar un grafico a partir de un arreglo de numeros aleatorios
+function graficoAleatorio(length, max){ // length: Tamaño del arreglo, max: cantidad de datos
+    desactivarBoton('agregar');
+    activarBoton('ordenar');
+    activarBoton('limpiar');
+
+    for(let i=0; i<length; i++){
+        arreglo.push(Math.floor(Math.random() * (max-1+1) + 1));
+    }
+
+    imprimirArreglo(arreglo);
+    desactivarBoton('aleatorio');
+    detener = false;
+}
+
+// Funcion para ordenar el grafico
+function iniciarOrdenamiento(algoritmo){ // algoritmo: algoritmo de ordenamiento a utilizar
+    algoritmo(arreglo);
+    desactivarBoton('agregar');
+    desactivarBoton('ordenar');
+}
+
+// Funcion para detener el ordenamiento y limpiar la pantalla
+function detenerOrdenamiento(container1, container2){ // container1, container2: contenedores a limpiar
+    detener = true;
+    limpiarHTML(container1);
+    limpiarHTML(container2);
+
+    desactivarBoton('ordenar');
+    desactivarBoton('limpiar');
+    activarBoton('agregar');
+    activarBoton('aleatorio');
+    arreglo = [];
+    actual = 0;
+    nDatos = 0;
+}
+
+// Funcion para borrar el contenido del HTMl
+function limpiarHTML(container){
+    while(container.firstChild){
+        container.removeChild(container.firstChild);
+    }
 }
 
 // Funcion para activar los botones agregar, aleatoio, ordenar y limpiar
@@ -35,7 +109,6 @@ function activarBoton(op){
             break;
     }
 }
-
 // Funcion para desactivar los botones agregar, aleatorio, ordenar y limpiar
 function desactivarBoton(op){
     switch(op){

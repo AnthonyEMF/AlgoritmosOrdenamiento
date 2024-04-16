@@ -1,26 +1,3 @@
-/* Container de la demostracion */
-.demostracion{
-    display: flex;
-    justify-content: center;
-}
-
-/* Estilo para el input de datos */
-#input-datos{
-    background-color: #ccc;
-    width: 40%;
-    padding: 10px;
-    margin-top: 20px;
-    font-size: 14px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-}
-
-#btn-agregar, #btn-aleatorio{
-    width: 9.8%;
-}
-
 /* Contenedor de la demostracion */
 #visualizacion{
     display: flex;
@@ -36,42 +13,21 @@
 }
 
 /* Contenedores de los recuadros */
-.container-actual, .container-recuadros{
+.container-superior, .container-inferior{
     height: 110px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.container-actual{
+.container-superior{
     padding-top: 30px;
 }
-.container-recuadros{
+.container-inferior{
     padding-bottom: 35px;
 }
 
-/* Botones */
-button{
-    width: 30%;
-    padding: 10px;
-    margin: 5px 0;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: none;
-    font-size: 14px;
-    background-color: blueviolet;
-    color: white;
-    cursor: pointer;
-}
-
-/* Estilo para botones inactivos */
-.btn-disabled{
-    background-color: rgb(78, 25, 128);
-    cursor: default;
-}
-
 /* Estilo para los recuadros del grafico */
-.recuadro, .recuadro-actual{
+.recuadro{
     width: 60px;
     height: 60px;
     background-color: dodgerblue;
@@ -83,9 +39,4 @@ button{
     align-items: center;
     margin-right: 5px;
     font-size: 18px;
-}
-
-/* Estilo del recuadro que va ser tomado */
-.recuadro-actual{
-    background-color: red;
 }
