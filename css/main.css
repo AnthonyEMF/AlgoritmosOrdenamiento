@@ -4,7 +4,7 @@ body{
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
-    background-color: blueviolet;
+    background-color: #252525;
     display: flex;
     justify-content: center;
 }

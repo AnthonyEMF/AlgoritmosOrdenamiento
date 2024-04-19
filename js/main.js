@@ -25,6 +25,7 @@ function agregarDato(length, amount){ // length: tamaño de datos, amount: canti
     }
     
     desactivarBoton('aleatorio');
+    activarBoton('limpiar');
     arreglo.push(datos);
     inputDatos.value = '';
     imprimirArreglo(arreglo);
@@ -35,7 +36,6 @@ function agregarDato(length, amount){ // length: tamaño de datos, amount: canti
         desactivarBoton('agregar');
     }else if(nDatos > 2){
         activarBoton('ordenar');
-        activarBoton('limpiar');
     }
 }
 
@@ -91,7 +91,7 @@ function activarBoton(op){
             btnAgregar.disabled = false;
             inputDatos.classList.remove('input-disabled');
             btnAgregar.classList.remove('btn-disabled');
-            inputDatos.placeholder = 'Ingresar numeros a ordenar (1-20)...';
+            inputDatos.placeholder = 'Ingresar numeros...';
             break;
         case 'aleatorio':
             btnRandom.disabled = false;

@@ -19,13 +19,43 @@
                 <a href="/index.html"><img src="/img/back.png" alt="icono"></a>
             </div>
         </div>
+        <hr>
         <!-- Informacion -->
-        <p>El algoritmo de burbuja o BubbleSort es un algoritmo de clasificación simple que recorre repetidamente 
-        una lista que necesita ser ordenada, compara cada par de elementos adyacentes y los 
-        intercambia si están en el orden incorrecto. Este proceso se repite hasta que no se necesitan 
-        más intercambios, lo que indica que la lista está ordenada.</p>
+        <div class="informacion">
+            <p>El algoritmo de burbuja es un algoritmo de clasificación simple que recorre repetidamente 
+                una lista que necesita ser ordenada, compara cada par de elementos adyacentes y los 
+                intercambia si están en el orden incorrecto. Este proceso se repite hasta que no se necesitan 
+                más intercambios, lo que indica que la lista está ordenada.</p>
+            <h2>Ventajas:</h2>
+            <ul>
+                <li><b>Simplicidad:</b> Fácil de entender e implementar.</li>
+                <li><b>Eficiencia en casos específicos:</b> Para listas casi ordenadas o pequeñas.</li>
+                <li><b>Bajo uso de memoria:</b> No requiere memoria adicional.</li>
+            </ul>
+            <h2>Desventajas:</h2>
+            <ul>
+                <li><b>Ineficiencia:</b> Lento para conjuntos de datos grandes.</li>
+                <li><b>Falta de adaptabilidad:</b> No se adapta a la distribución de datos.</li>
+                <li><b>No es estable:</b> No preserva el orden relativo de elementos con claves iguales.</li>
+            </ul>
+        </div>
         <!-- Demostracion -->
-        <input type="number" id="input-datos" placeholder="Ingresar numeros a ordenar (1-20)...">
+        <hr>
+        <div class="instrucciones">
+            <h2 id="titulo-demostracion">Demostración del Algoritmo</h2>
+            <h3>Instrucciones:</h3> 
+            <p>
+                <b>1.</b> Ingresar valores numéricos del 1 al 20.<br>
+                <b>2.</b> Se necesitan por lo menos 3 valores para poder ser ordenados.<br>
+                <b>3.</b> Presione "Aleatorio" para generar valores al azar.<br>
+                <b>4.</b> Cada valor corresponde al tamaño de las barras en el gráfico.<br>
+                <b>5.</b> Cuando las barras se colorean de rojo significa que estan siendo ordenadas.<br>
+                <b>6.</b> Presione "Ordenar" para ejecutar el algoritmo y ordenar los valores de forma ascendente.<br>
+                <b>7.</b> Presione "Limpiar" para borrar el gráfico.
+            </p>
+        </div>
+        <!-- Interfaz -->
+        <input type="number" id="input-datos" placeholder="Ingresar numeros...">
         <button id="btn-agregar">Añadir</button>
         <button id="btn-aleatorio">Aleatorio</button>
         <div class="demostracion">

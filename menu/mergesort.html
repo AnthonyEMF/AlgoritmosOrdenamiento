@@ -19,13 +19,43 @@
                 <a href="/index.html"><img src="/img/back.png" alt="icono"></a>
             </div>
         </div>
+        <hr>
         <!-- Informacion -->
-        <p>MergeSort o Mezcla es un algoritmo de ordenamiento eficiente que utiliza la técnica de "dividir y conquistar", 
-        consiste en dividir repetidamente la lista original en mitades hasta que cada sublista tenga un 
-        solo elemento, luego fusiona esas sublistas de manera ordenada. La clave de MergeSort es la 
-        operación de fusión, donde combina dos sublistas ordenadas en una única lista ordenada.</p>
+        <div class="informacion">
+            <p>MergeSort es un algoritmo de ordenamiento eficiente que utiliza la técnica de "dividir y conquistar", 
+                consiste en dividir repetidamente la lista original en mitades hasta que cada sublista tenga un 
+                solo elemento, luego fusiona esas sublistas de manera ordenada. La clave de MergeSort es la 
+                operación de fusión, donde combina dos sublistas ordenadas en una única lista ordenada.</p>
+            <h2>Ventajas:</h2>
+            <ul>
+                <li><b>Eficiencia:</b> Muy eficiente para ordenar conjuntos de datos de cualquier tamaño y desordenados.</li>
+                <li><b>Muy estable:</b> Conserva el orden relativo de los elementos con claves iguales.</li>
+                <li><b>Bajo uso de memoria:</b> Eficiente en términos de uso de memoria auxiliar.</li>
+            </ul>
+            <h2>Desventajas:</h2>
+            <ul>
+                <li><b>Inadaptable:</b> No puede aprovechar la información sobre la distribución de los datos.</li>
+                <li><b>Lentitud:</b> Lento para conjuntos de datos muy grandes.</li>
+                <li><b>Muchos intercambios:</b> Realiza muchos intercambios de elementos.</li>
+            </ul>
+        </div>
         <!-- Demostracion -->
-        <input type="number" id="input-datos" placeholder="Ingresar numeros a ordenar (1-20)...">
+        <hr>
+        <div class="instrucciones">
+            <h2 id="titulo-demostracion">Demostración del Algoritmo</h2>
+            <h3>Instrucciones:</h3> 
+            <p>
+                <b>1.</b> Ingresar valores numéricos del 1 al 20.<br>
+                <b>2.</b> Se necesitan por lo menos 3 valores para poder ser ordenados.<br>
+                <b>3.</b> Presione "Aleatorio" para generar valores al azar.<br>
+                <b>4.</b> Cada valor corresponde al tamaño de las barras en el gráfico.<br>
+                <b>5.</b> Cuando las barras se colorean de verde significa que han sido ordenadas.<br>
+                <b>6.</b> Presione "Ordenar" para ejecutar el algoritmo y ordenar los valores de forma ascendente.<br>
+                <b>7.</b> Presione "Limpiar" para borrar el gráfico.
+            </p>
+        </div>
+        <!-- Interfaz -->
+        <input type="number" id="input-datos" placeholder="Ingresar numeros...">
         <button id="btn-agregar">Agregar</button>
         <button id="btn-aleatorio">Aleatorio</button>
         <div class="demostracion">

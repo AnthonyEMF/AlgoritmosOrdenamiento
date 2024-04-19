@@ -15,31 +15,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 /* ----- Funciones Principales ----- */
 
-// Funcion para renderizar el arreglo en forma de recuadros
-function imprimirArreglo(indiceOrdenado){
-    limpiarHTML(containerSuperior);
-    limpiarHTML(containerInferior);
-    // Contenedor Superior de la Visualizacion
-    const recuadroActual = document.createElement('div');
-    recuadroActual.classList.add('recuadro');
-    recuadroActual.style.backgroundColor = 'red';
-    recuadroActual.textContent = `${actual}`;
-    containerSuperior.appendChild(recuadroActual);
-    // Contenedor Inferior de la Visualizacion
-    arreglo.forEach((dato, i) => {
-        const recuadro = document.createElement('div');
-        recuadro.classList.add('recuadro');
-        recuadro.textContent = dato;
-        if(i === indiceOrdenado){
-            recuadro.style.backgroundColor = 'red';
-        }else{
-            recuadro.style.backgroundColor = 'dodgerblue';
-        }
-        containerInferior.appendChild(recuadro);
-    });
-
-}
-
 // Funcion para implementar el algoritmo de insercion
 async function algoritmoInsercion(){
     // El ciclo comienza desde el segundo elemento de la lista
@@ -66,4 +41,28 @@ async function algoritmoInsercion(){
 
         if(detener) break; // flag para detener el ordenamiento
     }
+}
+
+// Funcion para renderizar el arreglo en forma de recuadros
+function imprimirArreglo(index){
+    limpiarHTML(containerSuperior);
+    limpiarHTML(containerInferior);
+    // Contenedor Superior de la Visualizacion
+    const recuadroActual = document.createElement('div');
+    recuadroActual.classList.add('recuadro');
+    recuadroActual.style.backgroundColor = 'red';
+    recuadroActual.textContent = `${actual}`;
+    containerSuperior.appendChild(recuadroActual);
+    // Contenedor Inferior de la Visualizacion
+    arreglo.forEach((dato, i) => {
+        const recuadro = document.createElement('div');
+        recuadro.classList.add('recuadro');
+        recuadro.textContent = dato;
+        if(i === index){
+            recuadro.style.backgroundColor = 'red';
+        }else{
+            recuadro.style.backgroundColor = 'dodgerblue';
+        }
+        containerInferior.appendChild(recuadro);
+    });
 }

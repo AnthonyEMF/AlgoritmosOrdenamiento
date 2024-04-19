@@ -15,56 +15,22 @@ document.addEventListener('DOMContentLoaded', function(){
 
 /* ----- Funciones Principales ----- */
 
-// Funcion para renderizar el arreglo en forma de barras
-function imprimirArreglo(arreglo){
-    limpiarHTML(visualizacion);
-
-    arreglo.forEach((dato, i) => {
-        const divBarra = document.createElement('div');
-        divBarra.classList.add('bar');
-
-        const sublistLength = arreglo.length/4;
-        if(i < sublistLength){
-            divBarra.style.backgroundColor = 'dodgerblue';
-        }else if (i < sublistLength*2){
-            divBarra.style.backgroundColor = 'green';
-        }else if (i < sublistLength*3){
-            divBarra.style.backgroundColor = 'orange';
-        }else{
-            divBarra.style.backgroundColor = 'red';
-        }
-
-        divBarra.style.height = dato * 10.5 + 'px';
-        visualizacion.appendChild(divBarra);
-    });
-}
-
-// Funcion que anima el proceso de ordenacion
-function animar(arreglo){
-    return new Promise(resolve => {
-        setTimeout(() => {
-            imprimirArreglo(arreglo); // Muestra el arreglo animado
-            resolve();
-        }, 250);
-    });
-}
-
 // Funcion principal que inicia el proceso de Merge Sort
 function algoritmoMergeSort(){
-    mergeSort(arreglo, 0, 20-1);
+    mergeSort(0, 20-1);
 }
 
 // Funcion recursiva que divide y ordena el arreglo
-async function mergeSort(arreglo, inicio, fin){
+async function mergeSort(inicio, fin){
     if(inicio >= fin) return;
     const medio = Math.floor((inicio+fin)/2); // Calcula el punto medio
-    await mergeSort(arreglo, inicio, medio); // Ordena la mitad izquierda
-    await mergeSort(arreglo, medio+1, fin); // Ordena la mitad derecha
-    await combinar(arreglo, inicio, medio, fin); // Combina las mitades ordenadas
+    await mergeSort(inicio, medio); // Ordena la mitad izquierda
+    await mergeSort(medio+1, fin); // Ordena la mitad derecha
+    await combinar(inicio, medio, fin); // Combina las mitades ordenadas
 }
 
 // Funcion que combina dos sub-arreglos ordenados en uno solo
-async function combinar(arreglo, inicio, medio, fin){
+async function combinar(inicio, medio, fin){
     const arregloIzquierdo = arreglo.slice(inicio, medio+1);
     const arregloDerecho = arreglo.slice(medio+1, fin+1);
     
@@ -78,7 +44,7 @@ async function combinar(arreglo, inicio, medio, fin){
         }else{
             arreglo[k++] = arregloDerecho[j++];
         }
-        await animar(arreglo);
+        await animar(k-1);
     }
 
     // Agrega los elementos restantes del sub-arreglo izquierdo
@@ -86,7 +52,7 @@ async function combinar(arreglo, inicio, medio, fin){
         if(detener) break; // flag para detener el ordenamiento
 
         arreglo[k++] = arregloIzquierdo[i++];
-        await animar(arreglo);
+        await animar(k-1);
     }
 
     // Agrega los elementos restantes del sub-arreglo derecho
@@ -97,6 +63,35 @@ async function combinar(arreglo, inicio, medio, fin){
         }
         
         arreglo[k++] = arregloDerecho[j++];
-        await animar(arreglo);
+        await animar(k-1);
     }
+}
+
+// Funcion para renderizar el arreglo en forma de barras
+function imprimirArreglo(index){
+    limpiarHTML(visualizacion);
+
+    arreglo.forEach((dato, i) => {
+        const divBarra = document.createElement('div');
+        divBarra.classList.add('bar');
+
+        if(i<=index){
+            divBarra.style.backgroundColor = 'limegreen'; // Barras ordenadas
+        }else{
+            divBarra.style.backgroundColor = 'dodgerblue'; // Barras desordenadas
+        }
+        
+        divBarra.style.height = dato * 10.5 + 'px';
+        visualizacion.appendChild(divBarra);
+    });
+}
+
+// Funcion que anima el proceso de ordenacion
+function animar(index){
+    return new Promise(resolve => {
+        setTimeout(() => {
+            imprimirArreglo(index); // Muestra el arreglo animado
+            resolve();
+        }, 250);
+    });
 }

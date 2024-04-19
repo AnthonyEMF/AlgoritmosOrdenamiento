@@ -19,13 +19,43 @@
                 <a href="/index.html"><img src="/img/back.png" alt="icono"></a>
             </div>
         </div>
+        <hr>
         <!-- Informacion -->
-        <p>El algoritmo de inserción en programación es un método de ordenamiento que 
-        funciona tomando un elemento a la vez e insertándolo en la posición correcta en la parte ordenada 
-        de la lista, desplazando los elementos mayores hacia la derecha para hacer espacio. Este proceso 
-        se repite hasta que todos los elementos estén en su lugar.</p>
+        <div class="informacion">
+            <p>El algoritmo de inserción en programación es un método de ordenamiento que 
+                funciona tomando un elemento a la vez e insertándolo en la posición correcta en la parte ordenada 
+                de la lista, desplazando los elementos mayores hacia la derecha para hacer espacio. Este proceso 
+                se repite hasta que todos los elementos estén en su lugar.</p>
+            <h2>Ventajas:</h2>
+            <ul>
+                <li><b>Sencillez:</b> Es fácil de visualizar y explicar.</li>
+                <li><b>Estable:</b> Preserva el orden de elementos iguales.</li>
+                <li><b>Bajo uso de memoria:</b> Solo requiere una cantidad constante de memoria adicional.</li>
+            </ul>
+            <h2>Desventajas:</h2>
+            <ul>
+                <li><b>Muchos intercambios:</b> Esto puede ser un problema para algunos tipos de datos.</li>
+                <li><b>Ineficiencia:</b> Lento para conjuntos de datos grandes.</li>
+                <li><b>Comparaciones innecesarias:</b> Realiza muchas comparaciones innecesarias.</li>
+            </ul>
+        </div>
         <!-- Demostracion -->
-        <input type="number" id="input-datos" placeholder="Ingresar datos a ordenar...">
+        <hr>
+        <div class="instrucciones">
+            <h2 id="titulo-demostracion">Demostración del Algoritmo</h2>
+            <h3>Instrucciones:</h3> 
+            <p>
+                <b>1.</b> Ingresar valores numéricos del 1 al 20.<br>
+                <b>2.</b> Se necesitan por lo menos 3 valores para poder ser ordenados.<br>
+                <b>3.</b> Presione "Aleatorio" para generar valores al azar.<br>
+                <b>4.</b> Cada valor se enlista en una serie de recuadros en la parte inferior.<br>
+                <b>5.</b> El elemento tomado y que está siendo ordenado se muestra en la parte superior de color rojo.<br>
+                <b>6.</b> Presione "Ordenar" para ejecutar el algoritmo y ordenar los valores de forma ascendente.<br>
+                <b>7.</b> Presione "Limpiar" para borrar todos los recuadros.
+            </p>
+        </div>
+        <!-- Interfaz -->
+        <input type="number" id="input-datos" placeholder="Ingresar numeros...">
         <button id="btn-agregar">Agregar</button>
         <button id="btn-aleatorio">Aleatorio</button>
         <div class="demostracion">

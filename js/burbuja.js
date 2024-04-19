@@ -15,20 +15,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 /* ----- Funciones Principales ----- */
 
-// Funcion para renderizar el arreglo en forma de barras
-function imprimirArreglo(arreglo){
-    limpiarHTML(visualizacion);
-
-    arreglo.forEach(dato => {
-        const divBarra = document.createElement('div');
-        divBarra.classList.add('bar');
-        divBarra.style.height = dato * 10.5 + 'px';
-        visualizacion.appendChild(divBarra);
-    });
-}
-
 // Funcion para implementar el algoritmo de burbuja
-async function algoritmoBurbuja(arreglo){
+async function algoritmoBurbuja(){
     for(let i=0; i<arreglo.length; i++){
         for(let j=0; j<arreglo.length-1; j++){
             if(detener) break; // flag para detener el ordenamiento
@@ -58,4 +46,16 @@ async function algoritmoBurbuja(arreglo){
             break;
         }
     }
+}
+
+// Funcion para renderizar el arreglo en forma de barras
+function imprimirArreglo(arreglo){
+    limpiarHTML(visualizacion);
+
+    arreglo.forEach(dato => {
+        const divBarra = document.createElement('div');
+        divBarra.classList.add('bar');
+        divBarra.style.height = dato * 10.5 + 'px';
+        visualizacion.appendChild(divBarra);
+    });
 }
