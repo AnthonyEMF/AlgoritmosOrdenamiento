@@ -55,14 +55,60 @@
             </p>
         </div>
         <!-- Interfaz -->
-        <input type="number" id="input-datos" placeholder="Ingresar numeros...">
-        <button id="btn-agregar">Agregar</button>
-        <button id="btn-aleatorio">Aleatorio</button>
-        <div class="demostracion">
-            <div id="visualizacion"><!-- Generado mediante JavaScript --></div>
+        <div class="interfaz">
+            <input type="number" id="input-datos" placeholder="Ingresar numeros...">
+            <button id="btn-agregar">Agregar</button>
+            <button id="btn-aleatorio">Aleatorio</button>
+            <div class="demostracion">
+                <div id="visualizacion"><!-- Generado mediante JavaScript --></div>
+            </div>
+            <button id="btn-ordenar" class="btn-disabled" disabled>Ordenar</button>
+            <button id="btn-limpiar" class="btn-disabled" disabled>Limpiar</button>
         </div>
-        <button id="btn-ordenar" class="btn-disabled" disabled>Ordenar</button>
-        <button id="btn-limpiar" class="btn-disabled" disabled>Limpiar</button>
+        <!-- Codigo -->
+        <hr>
+        <h2>Código:</h2>
+        <div class="codigo">
+            <div class="container-codigo">
+<pre><code>function mergeSort(arreglo){
+    if(arreglo.length <= 1){
+        return arreglo;
+    }
+    const medio = Math.floor(arreglo.length / 2);  
+    const izquierda = arreglo.slice(0, medio);
+    const derecha = arreglo.slice(medio);
+    const izqOrdenado = mergeSort(izquierda);
+    const derOrdenado = mergeSort(derecha);
+    
+    return merge(izqOrdenado, derOrdenado);
+}
+      
+function merge(izquierda, derecha){
+    let resultado = [];
+    let izqIndex = 0;
+    let derIndex = 0;
+      
+    while(izqIndex < izquierda.length && derIndex < derecha.length){
+        if(izquierda[izqIndex] < derecha[derIndex]){
+            resultado.push(izquierda[izqIndex]);
+            izqIndex++;
+        }else{
+            resultado.push(derecha[derIndex]);
+            derIndex++;
+        }
+    }
+    while(izqIndex < izquierda.length){
+        resultado.push(izquierda[izqIndex]);
+            izqIndex++;
+    }
+    while(derIndex < derecha.length){
+        resultado.push(derecha[derIndex]);
+        derIndex++;
+    }  
+    return resultado;
+}</code></pre>
+            </div>
+        </div>
     </div>
     <!-- Enlace al archivo JavaScript -->
     <script src="/js/main.js"></script>

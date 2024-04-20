@@ -28,15 +28,15 @@
                 elemento no ordenado.</p>
             <h2>Ventajas:</h2>
             <ul>
-                <li><b>...:</b> ...</li>
-                <li><b>...:</b> ...</li>
-                <li><b>...:</b> ...</li>
+                <li><b>Pocos intercambios:</b> Beneficioso para algunos tipos de datos.</li>
+                <li><b>Rendimiento constante:</b>  Existe poca diferencia entre el peor y el mejor caso.</li>
+                <li><b>Ahorro de memoria:</b> No requiere memoria adicional para su ejecución.</li>
             </ul>
             <h2>Desventajas:</h2>
             <ul>
-                <li><b>...:</b> ...</li>
-                <li><b>...:</b> ...</li>
-                <li><b>...:</b> ...</li>
+                <li><b>Complejidad espacial:</b> Puede requerir un espacio adicional dependiendo de la implementación.</li>
+                <li><b>Sin parcialidad:</b> No mejora su rendimiento cuando los datos ya están parcialmente ordenados.</li>
+                <li><b>Rendimiento:</b> En el peor de los casos el rendimiento es muy bajo.</li>
             </ul>
         </div>
         <!-- Demostracion -->
@@ -55,14 +55,37 @@
             </p>
         </div>
         <!-- Interfaz -->
-        <input type="number" id="input-datos" placeholder="Ingresar numeros...">
-        <button id="btn-agregar">Agregar</button>
-        <button id="btn-aleatorio">Aleatorio</button>
-        <div class="demostracion">
-            <div id="visualizacion"><!-- Generado mediante JavaScript --></div>
+        <div class="interfaz">
+            <input type="number" id="input-datos" placeholder="Ingresar numeros...">
+            <button id="btn-agregar">Agregar</button>
+            <button id="btn-aleatorio">Aleatorio</button>
+            <div class="demostracion">
+                <div id="visualizacion"><!-- Generado mediante JavaScript --></div>
+            </div>
+            <button id="btn-ordenar" class="btn-disabled" disabled>Ordenar</button>
+            <button id="btn-limpiar" class="btn-disabled" disabled>Limpiar</button>
         </div>
-        <button id="btn-ordenar" class="btn-disabled" disabled>Ordenar</button>
-        <button id="btn-limpiar" class="btn-disabled" disabled>Limpiar</button>
+        <!-- Codigo -->
+        <hr>
+        <h2>Código:</h2>
+        <div class="codigo">
+            <div class="container-codigo">
+<pre><code>function algoritmoSeleccion(arreglo){
+    for(let i=0; i < arreglo.length; i++){
+        let minimo = i;
+        for(let j=i+1; j < arreglo.length; j++){
+            if(arreglo[j] < arreglo[minimo]){
+                minimo = j;
+            }
+        }
+        if(i !== minimo){
+            [arreglo[i],arreglo[minimo]] = [arreglo[minimo],arreglo[i]];
+        }
+    }
+    return arreglo;
+}</code></pre>
+            </div>
+        </div>
     </div>
     <!-- Enlace al archivo JavaScript -->
     <script src="/js/main.js"></script>

@@ -22,22 +22,22 @@
         <hr>
         <!-- Informacion -->
         <div class="informacion">
-            <p>Consiste en seleccionar un elemento de la lista, llamado pivote, y luego reorganizar los elementos de la 
-                lista de manera que todos los elementos menores que el pivote estén a su izquierda, y todos los 
-                elementos mayores estén a su derecha. Después de esta partición, el pivote está en su posición final. 
+            <p>Consiste en seleccionar un elemento de la lista, llamado pivoteIdx, y luego reorganizar los elementos de la 
+                lista de manera que todos los elementos menores que el pivoteIdx estén a su izquierda, y todos los 
+                elementos mayores estén a su derecha. Después de esta partición, el pivoteIdx está en su posición final. 
                 Luego, el algoritmo se aplica recursivamente a las sublistas generadas por la partición hasta que 
                 toda la lista esté ordenada.</p>
             <h2>Ventajas:</h2>
             <ul>
-                <li><b>...:</b> ...</li>
-                <li><b>...:</b> ...</li>
-                <li><b>...:</b> ...</li>
+                <li><b>Tiempo de ejecución:</b> Es uno de los algoritmos más rápidos conocidos.</li>
+                <li><b>Memoria:</b> No requiere memoria adicional en su forma recursiva.</li>
+                <li><b>Adaptación:</b> Requiere de pocos recursos en comparación a otros métodos de ordenamiento.</li>
             </ul>
             <h2>Desventajas:</h2>
             <ul>
-                <li><b>...:</b> ...</li>
-                <li><b>...:</b> ...</li>
-                <li><b>...:</b> ...</li>
+                <li><b>Dificultad:</b> Es un poco más difícil de implementar que los algoritmos promedio.</li>
+                <li><b>Rendimiento:</b> Existe una gran diferencia entre el mejor y el peor caso.</li>
+                <li><b>No estable:</b> No preserva el orden relativo de elementos con claves iguales.</li>
             </ul>
         </div>
         <!-- Demostracion -->
@@ -56,14 +56,44 @@
             </p>
         </div>
         <!-- Interfaz -->
-        <input type="number" id="input-datos" placeholder="Ingresar numeros...">
-        <button id="btn-agregar">Agregar</button>
-        <button id="btn-aleatorio">Aleatorio</button>
-        <div class="demostracion">
-            <div id="visualizacion"><!-- Generado mediante JavaScript --></div>
+        <div class="interfaz">
+            <input type="number" id="input-datos" placeholder="Ingresar numeros...">
+            <button id="btn-agregar">Agregar</button>
+            <button id="btn-aleatorio">Aleatorio</button>
+            <div class="demostracion">
+                <div id="visualizacion"><!-- Generado mediante JavaScript --></div>
+            </div>
+            <button id="btn-ordenar" class="btn-disabled" disabled>Ordenar</button>
+            <button id="btn-limpiar" class="btn-disabled" disabled>Limpiar</button>
         </div>
-        <button id="btn-ordenar" class="btn-disabled" disabled>Ordenar</button>
-        <button id="btn-limpiar" class="btn-disabled" disabled>Limpiar</button>
+        <!-- Codigo -->
+        <hr>
+        <h2>Código:</h2>
+        <div class="codigo">
+            <div class="container-codigo">
+<pre><code>function quickSort(arreglo, izquierda=0, derecha=arreglo.length-1){
+    if(izquierda < derecha){
+        const pivoteIdx = particion(arreglo, izquierda, derecha);
+        quickSort(arreglo, izquierda, pivoteIdx-1);
+        quickSort(arreglo, pivoteIdx+1, derecha);
+    }
+    return arreglo;
+}
+
+function particion(arreglo, izquierda, derecha){
+    const pivote = arreglo[derecha];
+    let i = izquierda-1;
+    for(let j=izquierda; j < derecha; j++){
+        if(arreglo[j] <= pivote){
+            i++;
+            [arreglo[i], arreglo[j]] = [arreglo[j], arreglo[i]];
+        }
+    }
+    [arreglo[i+1], arreglo[derecha]] = [arreglo[derecha], arreglo[i+1]];
+    return i+1;
+}</code></pre>
+            </div>
+        </div>
     </div>
     <!-- Enlace al archivo JavaScript -->
     <script src="/js/main.js"></script>

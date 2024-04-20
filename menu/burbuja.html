@@ -29,7 +29,7 @@
             <h2>Ventajas:</h2>
             <ul>
                 <li><b>Simplicidad:</b> Fácil de entender e implementar.</li>
-                <li><b>Eficiencia en casos específicos:</b> Para listas casi ordenadas o pequeñas.</li>
+                <li><b>Eficiencia en casos específicos:</b> Util para listas casi ordenadas o pequeñas.</li>
                 <li><b>Bajo uso de memoria:</b> No requiere memoria adicional.</li>
             </ul>
             <h2>Desventajas:</h2>
@@ -55,14 +55,33 @@
             </p>
         </div>
         <!-- Interfaz -->
-        <input type="number" id="input-datos" placeholder="Ingresar numeros...">
-        <button id="btn-agregar">Añadir</button>
-        <button id="btn-aleatorio">Aleatorio</button>
-        <div class="demostracion">
-            <div id="visualizacion"><!-- Generado mediante JavaScript --></div>
+        <div class="interfaz">
+            <input type="number" id="input-datos" placeholder="Ingresar numeros...">
+            <button id="btn-agregar">Añadir</button>
+            <button id="btn-aleatorio">Aleatorio</button>
+            <div class="demostracion">
+                <div id="visualizacion"><!-- Generado mediante JavaScript --></div>
+            </div>
+            <button id="btn-ordenar" class="btn-disabled" disabled>Ordenar</button>
+            <button id="btn-limpiar" class="btn-disabled" disabled>Limpiar</button>
         </div>
-        <button id="btn-ordenar" class="btn-disabled" disabled>Ordenar</button>
-        <button id="btn-limpiar" class="btn-disabled" disabled>Limpiar</button>
+        <!-- Codigo -->
+        <hr>
+        <h2>Código:</h2>
+        <div class="codigo">
+            <div class="container-codigo">
+<pre><code>function algoritmoBurbuja(arreglo){
+    for(let i=0; i < arreglo.length; i++){
+        for(let j=0; j < arreglo.length-i-1; j++){
+            if(arreglo[j] > arreglo[j+1]){
+                [arreglo[j],arreglo[j+1]] = [arreglo[j+1],arreglo[j]];
+            }
+        }
+    }
+    return arreglo;
+}</code></pre>
+            </div>
+        </div>
     </div>
     <!-- Enlace al archivo JavaScript -->
     <script src="/js/main.js"></script>

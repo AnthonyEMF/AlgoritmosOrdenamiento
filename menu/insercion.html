@@ -55,17 +55,38 @@
             </p>
         </div>
         <!-- Interfaz -->
-        <input type="number" id="input-datos" placeholder="Ingresar numeros...">
-        <button id="btn-agregar">Agregar</button>
-        <button id="btn-aleatorio">Aleatorio</button>
-        <div class="demostracion">
-            <div id="visualizacion">
-                <div class="container-superior"><!-- Generado mediante JavaScript --></div>
-                <div class="container-inferior"><!-- Generado mediante JavaScript --></div>
+        <div class="interfaz">
+            <input type="number" id="input-datos" placeholder="Ingresar numeros...">
+            <button id="btn-agregar">Agregar</button>
+            <button id="btn-aleatorio">Aleatorio</button>
+            <div class="demostracion">
+                <div id="visualizacion">
+                    <div class="container-superior"><!-- Generado mediante JavaScript --></div>
+                    <div class="container-inferior"><!-- Generado mediante JavaScript --></div>
+                </div>
+            </div>
+            <button id="btn-ordenar" class="btn-disabled" disabled>Ordenar</button>
+            <button id="btn-limpiar" class="btn-disabled" disabled>Limpiar</button>
+        </div>
+        <!-- Codigo -->
+        <hr>
+        <h2>Código:</h2>
+        <div class="codigo">
+            <div class="container-codigo">
+<pre><code>function algoritmoInsercion(arreglo){
+    for(let i=1; i < arreglo.length; i++){
+        let valorActual = arreglo[i];
+        let j = i-1;
+        while(j >= 0 && arreglo[j] > valorActual){
+            arreglo[j+1] = arreglo[j];
+            j--;
+        }
+        arreglo[j+1] = valorActual;
+    }
+    return arreglo;
+}</code></pre>
             </div>
         </div>
-        <button id="btn-ordenar" class="btn-disabled" disabled>Ordenar</button>
-        <button id="btn-limpiar" class="btn-disabled" disabled>Limpiar</button>
     </div>
     <!-- Enlace al archivo JavaScript -->
     <script src="/js/main.js"></script>
