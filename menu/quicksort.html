@@ -71,7 +71,7 @@
         <h2>Código:</h2>
         <div class="codigo">
             <div class="container-codigo">
-<pre><code>function quickSort(arreglo, izquierda=0, derecha=arreglo.length-1){
+<pre><code id="text-codigo">function quickSort(arreglo, izquierda=0, derecha=arreglo.length-1){
     if(izquierda < derecha){
         const pivoteIdx = particion(arreglo, izquierda, derecha);
         quickSort(arreglo, izquierda, pivoteIdx-1);
@@ -94,6 +94,7 @@ function particion(arreglo, izquierda, derecha){
 }</code></pre>
             </div>
         </div>
+        <button id="btn-copiar">Copiar</button>
     </div>
     <!-- Enlace al archivo JavaScript -->
     <script src="/js/main.js"></script>
