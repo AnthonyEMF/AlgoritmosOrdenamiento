@@ -154,6 +154,7 @@ button{
     justify-content: center;
     margin-top: 20px;
 }
+
 .container-codigo{
     width: 60%;
     padding: 20px 40px;
@@ -164,4 +165,13 @@ button{
     font-size: 14px;
     line-height: 1.5;
     color: #ccc;
+}
+
+#btn-copiar{
+    width: 69%;
+    transition: background 0.3s, color 0.3s;
+}
+
+#btn-copiar:hover{
+    background-color: #252525;
 }

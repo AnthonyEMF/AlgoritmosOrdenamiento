@@ -7,11 +7,19 @@ const btnAgregar = document.querySelector('#btn-agregar');
 const btnRandom = document.querySelector('#btn-aleatorio');
 const btnOrdenar = document.querySelector('#btn-ordenar');
 const btnLimpiar = document.querySelector('#btn-limpiar');
+const textCodigo = document.querySelector('#text-codigo');
+const btnCopiar = document.querySelector('#btn-copiar');
 // Variables de control
 let arreglo = [];
 let actual = 0;
 let nDatos = 0;
 let detener = false;
+
+// Funcion para copiar el codigo de la demostracion en el HTML
+btnCopiar.addEventListener('click', function(){
+    navigator.clipboard.writeText(textCodigo.textContent);
+    alert('Texto copiado en el portapapeles.');
+});
 
 /* ----- Funciones Globales ----- */
 
