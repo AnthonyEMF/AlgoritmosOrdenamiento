@@ -11,3 +11,11 @@
     margin: 5px 0;
     padding: 0 2px;
 }
+
+/* Estilo para cada barra del grafico */
+.bar{
+    background-color: dodgerblue;
+    width: 51px;
+    margin: 0 2px;
+    transition: height 0.2s;
+}

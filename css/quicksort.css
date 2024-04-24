@@ -2,7 +2,7 @@
 #visualizacion{
     display: flex;
     align-items: flex-end;
-    height: 200px;
+    height: 220px;
     width: 60%;
     background-color: #ccc;
     border-top: 0;
@@ -10,4 +10,12 @@
     border-radius: 5px;
     margin: 5px 0;
     padding: 0 2px;
+}
+
+/* Estilo para cada barra del grafico */
+.bar{
+    background-color: dodgerblue;
+    width: 51px;
+    margin: 0 2px;
+    transition: height 0.2s;
 }
