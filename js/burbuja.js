@@ -1,14 +1,14 @@
 // Cargar todo el DOM
 document.addEventListener('DOMContentLoaded', function(){
     // Eventos
-    btnAgregar.addEventListener('click', () => agregarDato(10, 20));
-    btnRandom.addEventListener('click', () => graficoAleatorio(10, 20));
+    btnAgregar.addEventListener('click', () => agregarDato(10, 10));
+    btnRandom.addEventListener('click', () => graficoAleatorio(10, 10));
     btnOrdenar.addEventListener('click', () => iniciarOrdenamiento(algoritmoBurbuja));
     btnLimpiar.addEventListener('click', () => detenerOrdenamiento(visualizacion, ''));
     // Agregar dato cuando se presione la tecla "Enter"
     inputDatos.addEventListener('keypress', e => {
         if(e.key === "Enter"){
-            agregarDato(10, 20);
+            agregarDato(10, 10);
         }
     });
 });
@@ -25,7 +25,7 @@ async function algoritmoBurbuja(){
             let barras = document.querySelectorAll('.bar');
             barras[j].style.backgroundColor = 'red';
             barras[j+1].style.backgroundColor = 'red';
-            await new Promise(resolve => setTimeout(resolve, 250)); // Esperar 250 ms
+            await new Promise(resolve => setTimeout(resolve, 300)); // Esperar 250 ms
 
             if(arreglo[j] > arreglo[j+1]){
                 // Intercambiar elementos
@@ -55,7 +55,8 @@ function imprimirArreglo(arreglo){
     arreglo.forEach(dato => {
         const divBarra = document.createElement('div');
         divBarra.classList.add('bar');
-        divBarra.style.height = dato * 10.5 + 'px';
+        divBarra.style.height = dato * 30 + 'px';
+        divBarra.textContent = `${dato}`;
         visualizacion.appendChild(divBarra);
     });
 }

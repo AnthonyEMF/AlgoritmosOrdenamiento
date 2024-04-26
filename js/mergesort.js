@@ -1,14 +1,14 @@
 // Cargar todo el DOM
 document.addEventListener('DOMContentLoaded', function(){
     // Eventos
-    btnAgregar.addEventListener('click', () => agregarDato(20, 20));
-    btnRandom.addEventListener('click', () => graficoAleatorio(20, 20));
+    btnAgregar.addEventListener('click', () => agregarDato(20, 10));
+    btnRandom.addEventListener('click', () => graficoAleatorio(20, 10));
     btnOrdenar.addEventListener('click', () => iniciarOrdenamiento(algoritmoMergeSort));
     btnLimpiar.addEventListener('click', () => detenerOrdenamiento(visualizacion, ''));
     // Agregar dato cuando se presione la tecla "Enter"
     inputDatos.addEventListener('keypress', e => {
         if(e.key === "Enter"){
-            agregarDato(20, 20);
+            agregarDato(20, 10);
         }
     });
 });
@@ -81,7 +81,8 @@ function imprimirArreglo(index){
             divBarra.style.backgroundColor = 'dodgerblue'; // Barras desordenadas
         }
         
-        divBarra.style.height = dato * 10.5 + 'px';
+        divBarra.style.height = dato * 30 + 'px';
+        divBarra.textContent = `${dato}`;
         visualizacion.appendChild(divBarra);
     });
 }
