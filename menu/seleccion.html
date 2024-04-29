@@ -5,9 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/sections.css">
     <link rel="stylesheet" href="/css/seleccion.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Selección</title>
 </head>
 <body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <ul>
+            <li><a class="btn-navbar" href="/index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a class="btn-navbar" id="btn-contact-deploy">Integrantes</a></li>
+            <li><a class="btn-navbar" href="https://drive.google.com/drive/folders/1DF5o64s-kAbIic9iiYMOarAyK6pIaZDM" target="_blank">Documentación</a></li>
+            <li><a class="btn-navbar" id="btn-menu-display"><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+        <div class="deploy-menu">
+            <div class="container-menu">
+                <a class="btn-navbar" href="/menu/burbuja.html">Burbuja</a>
+                <a class="btn-navbar" href="/menu/insercion.html">Inserción</a>
+                <a class="btn-navbar" href="/menu/seleccion.html">Selección</a>
+                <a class="btn-navbar" href="/menu/mergesort.html">MergeSort</a>
+                <a class="btn-navbar" href="/menu/quicksort.html">QuickSort</a>
+            </div>
+            <div class="container-contact">
+                <div class="names-info">
+                    <b>Danilo Isaac Vides Chicas</b>
+                    <p>20212130062</p>
+                    <b>Anthony Edward Miranda Fuentes</b>
+                    <p>20222130038</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Contenedor principal -->
     <div class="container">
         <!-- Encabezado -->
@@ -27,17 +58,17 @@
                 la lista ordenada. Esto se hace intercambiando el elemento seleccionado con el primer 
                 elemento no ordenado.</p>
             <h2>Ventajas:</h2>
-            <ul>
-                <li><b>Pocos intercambios:</b> Beneficioso para algunos tipos de datos.</li>
-                <li><b>Rendimiento constante:</b>  Existe poca diferencia entre el peor y el mejor caso.</li>
-                <li><b>Ahorro de memoria:</b> No requiere memoria adicional para su ejecución.</li>
-            </ul>
+            <dl>
+                <dt><b>Pocos intercambios:</b> Beneficioso para algunos tipos de datos.</dt>
+                <dt><b>Rendimiento constante:</b>  Existe poca diferencia entre el peor y el mejor caso.</dt>
+                <dt><b>Ahorro de memoria:</b> No requiere memoria adicional para su ejecución.</dt>
+            </dl>
             <h2>Desventajas:</h2>
-            <ul>
-                <li><b>Complejidad espacial:</b> Puede requerir un espacio adicional dependiendo de la implementación.</li>
-                <li><b>Sin parcialidad:</b> No mejora su rendimiento cuando los datos ya están parcialmente ordenados.</li>
-                <li><b>Rendimiento:</b> En el peor de los casos el rendimiento es muy bajo.</li>
-            </ul>
+            <dl>
+                <dt><b>Complejidad espacial:</b> Puede requerir un espacio adicional dependiendo de la implementación.</dt>
+                <dt><b>Sin parcialidad:</b> No mejora su rendimiento cuando los datos ya están parcialmente ordenados.</dt>
+                <dt><b>Rendimiento:</b> En el peor de los casos el rendimiento es muy bajo.</dt>
+            </dl>
         </div>
         <!-- Demostracion -->
         <hr>
@@ -45,13 +76,14 @@
             <h2 id="titulo-demostracion">Demostración del Algoritmo</h2>
             <h3>Instrucciones:</h3> 
             <p>
-                <b>1.</b> Ingresar valores numéricos del 1 al 20.<br>
+                <b>1.</b> Ingresar valores numéricos del 1 al 10.<br>
                 <b>2.</b> Se necesitan por lo menos 3 valores para poder ser ordenados.<br>
                 <b>3.</b> Presione "Aleatorio" para generar valores al azar.<br>
-                <b>4.</b> ...<br>
-                <b>5.</b> ...<br>
-                <b>6.</b> Presione "Ordenar" para ejecutar el algoritmo y ordenar los valores de forma ascendente.<br>
-                <b>7.</b> Presione "Limpiar" para borrar el gráfico.
+                <b>4.</b> Cada valor corresponde al tamaño de las barras en el gráfico.<br>
+                <b>5.</b> Cuando las barras se colorean de rojo es porque se está recorriendo la grafica para proceder a ordenarlos.<br>
+                <b>6.</b> Las barras que se colorean de verde son las que el algoritmo selecciona para intercmabiar y así ordenar.<br>
+                <b>7.</b> Presione "Ordenar" para ejecutar el algoritmo y ordenar los valores de forma ascendente.<br>
+                <b>8.</b> Presione "Limpiar" para borrar el gráfico.
             </p>
         </div>
         <!-- Interfaz -->
@@ -91,5 +123,6 @@
     <!-- Enlace al archivo JavaScript -->
     <script src="/js/main.js"></script>
     <script src="/js/seleccion.js"></script>
+    <script src="/js/deploy-menu.js"></script>
 </body>
 </html>

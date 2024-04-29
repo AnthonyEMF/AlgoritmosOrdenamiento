@@ -15,7 +15,7 @@
 
 /* Estilo para cada barra del grafico */
 .bar{
-    width: 23.5px;
+    width: 50.3px;
     margin: 0 2px;
     transition: height 0.2s;
     font-size: 15px;
@@ -25,4 +25,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+
+.container {
+    margin-top: 80px;
 }

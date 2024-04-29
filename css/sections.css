@@ -23,42 +23,12 @@ body{
 /* Encabezado */
 .header{
     display: flex;
+    justify-content: center;
 }
 
 /* Container titulo */
 .container-titulo{
-    width: 80%;
     display: flex;
-}
-
-/* Container boton regresar */
-.container-btnBack{
-    width: 20%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
-
-/* Icono boton regresar */
-img{
-    height: 25px;
-}
-
-/* Boton regresar */
-a{
-    width: 50px;
-    height: 25px;
-    background-color: #7e7e7e;
-    border-radius: 5px;
-    padding: 10px 20px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-}
-
-a:hover{
-    background-color: #252525;
 }
 
 /* Lineas horizontales */
@@ -79,11 +49,11 @@ p{
     margin: 0;
 }
 
-ul{
+dl {
     padding: 0 50px;
 }
 
-li{
+dt {
     margin: 20px 0;
 }
 

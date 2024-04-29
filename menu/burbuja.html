@@ -5,18 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/sections.css">
     <link rel="stylesheet" href="/css/burbuja.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Burbuja</title>
 </head>
 <body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <ul>
+            <li><a class="btn-navbar" href="/index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a class="btn-navbar" id="btn-contact-deploy">Integrantes</a></li>
+            <li><a class="btn-navbar" href="https://drive.google.com/drive/folders/1DF5o64s-kAbIic9iiYMOarAyK6pIaZDM" target="_blank">Documentación</a></li>
+            <li><a class="btn-navbar" id="btn-menu-display"><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+        <div class="deploy-menu">
+            <div class="container-menu">
+                <a class="btn-navbar" href="/menu/burbuja.html">Burbuja</a>
+                <a class="btn-navbar" href="/menu/insercion.html">Inserción</a>
+                <a class="btn-navbar" href="/menu/seleccion.html">Selección</a>
+                <a class="btn-navbar" href="/menu/mergesort.html">MergeSort</a>
+                <a class="btn-navbar" href="/menu/quicksort.html">QuickSort</a>
+            </div>
+            <div class="container-contact">
+                <div class="names-info">
+                    <b>Danilo Isaac Vides Chicas</b>
+                    <p>20212130062</p>
+                    <b>Anthony Edward Miranda Fuentes</b>
+                    <p>20222130038</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Contenedor principal -->
     <div class="container">
         <!-- Encabezado -->
         <div class="header">
             <div class="container-titulo">
-                <h1>Algoritmo Burbuja</h1>
+                <h1>Algoritmo de Burbuja</h1>
             </div>
             <div class="container-btnBack">
-                <a href="/index.html"><img src="/img/back.png" alt="icono"></a>
+                <!-- <a href="/index.html"><img src="/img/back.png" alt="icono"></a> -->
             </div>
         </div>
         <hr>
@@ -27,17 +58,17 @@
                 intercambia si están en el orden incorrecto. Este proceso se repite hasta que no se necesitan 
                 más intercambios, lo que indica que la lista está ordenada.</p>
             <h2>Ventajas:</h2>
-            <ul>
-                <li><b>Simplicidad:</b> Fácil de entender e implementar.</li>
-                <li><b>Eficiencia en casos específicos:</b> Util para listas casi ordenadas o pequeñas.</li>
-                <li><b>Bajo uso de memoria:</b> No requiere memoria adicional.</li>
-            </ul>
+            <dl>
+                <dt><b>● Simplicidad:</b> Fácil de entender e implementar.</dt>
+                <dt><b>● Eficiencia en casos específicos:</b> Util para listas casi ordenadas o pequeñas.</dt>
+                <dt><b>● Bajo uso de memoria:</b> No requiere memoria adicional.</dt>
+            </dl>
             <h2>Desventajas:</h2>
-            <ul>
-                <li><b>Ineficiencia:</b> Lento para conjuntos de datos grandes.</li>
-                <li><b>Falta de adaptabilidad:</b> No se adapta a la distribución de datos.</li>
-                <li><b>No es estable:</b> No preserva el orden relativo de elementos con claves iguales.</li>
-            </ul>
+            <dl>
+                <dt><b>● Ineficiencia:</b> Lento para conjuntos de datos grandes.</dt>
+                <dt><b>● Falta de adaptabilidad:</b> No se adapta a la distribución de datos.</dt>
+                <dt><b>● No es estable:</b> No preserva el orden relativo de elementos con claves iguales.</dt>
+            </dl>
         </div>
         <!-- Demostracion -->
         <hr>
@@ -84,8 +115,10 @@
         </div>
         <button id="btn-copiar">Copiar</button>
     </div>
+
     <!-- Enlace al archivo JavaScript -->
     <script src="/js/main.js"></script>
     <script src="/js/burbuja.js"></script>
+    <script src="/js/deploy-menu.js"></script>
 </body>
 </html>

@@ -1,0 +1,143 @@
+ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+  }
+    
+  li {
+    display: inline;
+  }
+
+.navbar {
+    background-color: white;
+    padding: 20px;
+    position: fixed;  /* Hace que la barra sea fija */
+    top: 0;  /* Alinea la barra en la parte superior */
+    width: 100%;  /* Asegura que la barra ocupe todo el ancho de la pantalla */
+    z-index: 1;  /* Asegura que la barra esté encima de otros elementos */
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Alinea el último elemento hacia la derecha */
+.navbar ul li:last-child {
+    margin-left: auto;
+}
+
+/*menu desplegable*/
+.deploy-menu {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    width: 100vw;
+    height: 0px;
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    transition: all 250ms ease-out;
+  }
+
+  .deploy-menu.open {
+    height: 100px;
+  }
+
+  /*menu desplegable*/
+  .deploy-menu div:nth-child(2) {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    width: 100vw;
+    height: 0px;
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    transition: all 250ms ease-out;
+  }
+
+  .deploy-menu div.open {
+    height: 100px;
+  }
+
+  .names-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    color: #252525;
+    padding: 10px;
+    background-color: white;
+  }
+
+  .names-info b {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .names-info p {
+    margin: 0;
+    text-align: center;
+  }
+
+  .btn-navbar {
+    font-size: 17px;
+    background: transparent;
+    border: none;
+    padding: 1em 1.5em;
+    color: #252525;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.5s ease;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .btn-navbar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #252525;
+    transition: 0.5s ease;
+  }
+  
+  .btn-navbar:hover {
+    color: white;
+    transition-delay: 0.5s;
+  }
+  
+  .btn-navbar:hover::before {
+    width: 100%;
+  }
+  
+  .btn-navbar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #252525;
+    transition: 0.4s ease;
+    z-index: -1;
+  }
+  
+  .btn-navbar:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+  }

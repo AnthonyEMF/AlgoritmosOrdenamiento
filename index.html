@@ -4,23 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Aplicación de Ordenamiento</title>
 </head>
 <body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <ul>
+            <li><a class="btn-navbar" href="index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a class="btn-navbar" id="btn-contact-deploy">Integrantes</a></li>
+            <li><a class="btn-navbar" href="https://drive.google.com/drive/folders/1DF5o64s-kAbIic9iiYMOarAyK6pIaZDM" target="_blank">Documentación</a></li>
+            <li><a class="btn-navbar" id="btn-menu-display"><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+        <div class="deploy-menu">
+            <div class="container-menu">
+                <a class="btn-navbar" href="/menu/burbuja.html">Burbuja</a>
+                <a class="btn-navbar" href="/menu/insercion.html">Inserción</a>
+                <a class="btn-navbar" href="/menu/seleccion.html">Selección</a>
+                <a class="btn-navbar" href="/menu/mergesort.html">MergeSort</a>
+                <a class="btn-navbar" href="/menu/quicksort.html">QuickSort</a>
+            </div>
+            <div class="container-contact">
+                <div class="names-info">
+                    <b>Danilo Isaac Vides Chicas</b>
+                    <p>20212130062</p>
+                    <b>Anthony Edward Miranda Fuentes</b>
+                    <p>20222130038</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Contenedor principal -->
     <div class="container">
         <!-- Encabezado -->
         <div class="container-header">
             <h1>Algoritmos de Ordenamiento</h1>
         </div>
-        <!-- Menu de botones -->
-        <div class="container-menu">
-            <a href="/menu/burbuja.html">Burbuja</a>
-            <a href="/menu/insercion.html">Inserción</a>
-            <a href="/menu/seleccion.html">Selección</a>
-            <a href="/menu/mergesort.html">MergeSort</a>
-            <a href="/menu/quicksort.html">QuickSort</a>
+        <hr>
+        <div class="welcome">
+            <h2>Bienvenido a la Aplicación de Ordenamiento</h2>
+        </div>
+        <div class="introduction">
+            <p>
+                Esta aplicación web fue creada con el objetivo de explorar diferentes algoritmos de ordenamiento de datos que nos 
+                permiten organizar los elementos de una lista de manera alfabética, ascendente, descendente, etc. 
+                Es un proceso que se realiza a menudo en el mundo de la programación, por lo que no debe sorprender que existan 
+                numerosos algoritmos para esta tarea. Como ocurre con cualquier técnica, cada uno tiene sus pros y sus contras. 
+                ¿Cuál es el mejor para ti? dependerá de tu contexto.
+            </p>
+            <h2>¿En qué consiste?</h2>
+            <p>
+                La aplicación consta de cinco algoritmos de ordenamiento diferentes con páginas dedicadas para 
+                cada uno. Se proporciona una descripción breve del algoritmo, ventajas, desventajas, una demostración
+                gráfica y su código implementado para JavaScript. A continuación, elige el algoritmo que deseas visualizar.
+            </p>
+        </div>
+        <div class="menu">
+            <div class="container-header-menu">
+                <h2>Menú de Algoritmos</h2>
+            </div>
+            <!-- Menu de botones -->
+            <div class="container-menu">
+                <a class="btn" href="/menu/burbuja.html">Burbuja</a>
+                <a class="btn" href="/menu/insercion.html">Inserción</a>
+                <a class="btn" href="/menu/seleccion.html">Selección</a>
+                <a class="btn" href="/menu/mergesort.html">MergeSort</a>
+                <a class="btn" href="/menu/quicksort.html">QuickSort</a>
+            </div>
         </div>
     </div>
+    
+    <script src="/js/deploy-menu.js"></script>
 </body>
 </html>

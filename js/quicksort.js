@@ -1,20 +1,21 @@
 // Cargar todo el DOM
 document.addEventListener('DOMContentLoaded', function(){
     // Eventos
-    btnAgregar.addEventListener('click', () => agregarDato(20, 20));
-    btnRandom.addEventListener('click', () => graficoAleatorio(20, 20));
+    btnAgregar.addEventListener('click', () => agregarDato(20, 10));
+    btnRandom.addEventListener('click', () => graficoAleatorio(20, 10));
     btnOrdenar.addEventListener('click', () => iniciarOrdenamiento(QuickSort));
     btnLimpiar.addEventListener('click', () => detenerOrdenamiento(visualizacion, ''));
     // Agregar dato cuando se presione la tecla "Enter"
     inputDatos.addEventListener('keypress', e => {
         if(e.key === "Enter"){
-            agregarDato(20, 20);
+            agregarDato(20, 10);
         }
     });
 });
 
 /* ----- Funciones Principales ----- */
 
+// Funcion para implementar el algoritmo QuickSort
 async function QuickSort(arreglo, izquierda = 0, derecha = arreglo.length - 1) {
     if (izquierda < derecha) {
       // Particionar el arreglo y obtener el índice del pivote
@@ -69,7 +70,7 @@ async function imprimirArreglo(arreglo, highlight1 = null, highlight2 = null) {
     arreglo.forEach((dato, idx) => {
         const divBarra = document.createElement('div');
         divBarra.classList.add('bar');
-        divBarra.style.height = dato * 10.5 + 'px';// Ajustar altura para que sea visible
+        divBarra.style.height = dato * 30 + 'px';// Ajustar altura para que sea visible
 
         // Resalta las barras si se especifica
         if (idx === highlight1 || idx === highlight2) {
@@ -78,6 +79,7 @@ async function imprimirArreglo(arreglo, highlight1 = null, highlight2 = null) {
             divBarra.style.backgroundColor = "dodgerblue"; // Color estándar
         }
 
+        divBarra.textContent = `${dato}`;
         visualizacion.appendChild(divBarra);
     });
 
